@@ -1,5 +1,5 @@
 class Player {
-    val name ="翁子皓"
+    var name ="翁子皓"
         get() = field.capitalize()
         set(value) {
             field = value.trim()
