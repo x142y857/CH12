@@ -8,15 +8,14 @@ fun main() {
     var isBlessed = true
     val isImmortal = false
 
-    val player = player()
+    val player = Player()
+    player.castFireball()
     val karma = (pow(random(),(110-healthPoints)/100.0)*20).toInt()
     //Aura
     val auraColor = auraColor(isBlessed, healthPoints, isImmortal, karma)
 
     val healthStatus = formatHealthStatus(healthPoints, isBlessed)
     printPlayerStatus(auraColor, isBlessed, name, healthStatus)
-    val inebriationLevel = castFireball()
-    val inebriationStatus = inebriationLevelStatus(inebriationLevel)
 
 }
 
@@ -63,29 +62,3 @@ private fun formatHealthStatus(healthPoints: Int, isBlessed: Boolean)=
 
 
 
-private fun castFireball(numFireballs: Int = 2) : Int {
-
-    println("一個FireBall出現了. (x$numFireballs)")
-
-    var minInebriation : Int
-    if (numFireballs < 50) minInebriation = numFireballs else minInebriation = 50
-    val fireballInebriation = (minInebriation..50).random()
-
-    return fireballInebriation
-}
-
-private fun inebriationLevelStatus(inebriationLevel: Int) {
-
-    val inebriationStatus = when (inebriationLevel) {
-        in 41..50 -> "..爛醉如泥"
-        in 31..40 -> "大醉"
-        in 21..30 -> "醉了"
-        in 11..20 -> "微醉"
-        in 1..10 -> "微醺"
-        else -> "沒醉"
-    }
-
-    println("醉酒程度: $inebriationLevel")
-    println("醉酒狀態: $inebriationStatus")
-
-}
