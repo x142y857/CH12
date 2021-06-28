@@ -3,9 +3,6 @@ import java.lang.Math.pow
 import java.lang.Math.random
 
 fun main() {
-    var healthPoints = 89
-    var isBlessed = true
-    val isImmortal = false
 
     val player = Player()
     player.castFireball()
