@@ -15,7 +15,7 @@ fun main() {
     val auraColor = auraColor(isBlessed, healthPoints, isImmortal, karma)
 
     val healthStatus = formatHealthStatus(healthPoints, isBlessed)
-    printPlayerStatus(auraColor, isBlessed, name, healthStatus)
+    printPlayerStatus(auraColor, isBlessed, player.name, healthStatus)
 
 }
 
