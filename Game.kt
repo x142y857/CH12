@@ -3,7 +3,6 @@ import java.lang.Math.pow
 import java.lang.Math.random
 
 fun main() {
-    val name = "翁子皓"
     var healthPoints = 89
     var isBlessed = true
     val isImmortal = false
