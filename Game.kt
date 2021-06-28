@@ -6,23 +6,18 @@ fun main() {
 
     val player = Player()
     player.castFireball()
-    val karma = (pow(random(),(110-healthPoints)/100.0)*20).toInt()
     //Aura
-    val auraColor = auraColor(isBlessed, healthPoints, isImmortal, karma)
+    val auraColor =player.auraColor()
 
-    val healthStatus = formatHealthStatus(healthPoints, isBlessed)
-    printPlayerStatus(auraColor, isBlessed, player.name, healthStatus)
+    printPlayerStatus(player)
 
+    player.auraColor()
 }
 
-private fun printPlayerStatus(
-    auraColor: String,
-    isBlessed: Boolean,
-    name: String,
-    healthStatus: String
-) {
-    println("光環顏色：$auraColor" + "    走運嗎？${if (isBlessed) "是的" else "很背"}")
-    println("$name $healthStatus")
+private fun printPlayerStatus(player:Player)
+ {
+    println("光環顏色：${player.auraColor()} " + "    走運嗎？${if (player.isBlessed) "是的" else "很背"}")
+    println("${player.name} ${player.formatHealthStatus()}")
 }
 
 
